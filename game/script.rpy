@@ -5,6 +5,7 @@
 
 define e = Character("Yuki")
 define b = Character("???")
+define s = Character("?People?")
 
 
 # The game starts here.
@@ -1789,14 +1790,114 @@ label start:
   
 
     label cafeEatN:
+    y "No, I don't want to eat."
+    e "ohh, well that's okay!"
+    #might or might not make yuki eat
+    e "I'm not very hungry either."
+    e "I'm not sure if there is anything good in this cafe,"
+    e "They might not be selling good things."
+    e "I hope we can get away with not ordering anything."
+    e "I don't want them to kick me out in the sun."
+    jump talk32
+   
+    #MAJOR PATH: like the normal talk but in cafe!
+    label talk32:
+    #note: the only cafe path that does not end here is secret drink,
+    #even if player refuses to eat, they will still participate in this talk.
+    e "[playerNName],"
+    e "Do you like the sun?"
+    menu:
+     "Do you like the sun?"
+     "Yes":
+       jump cafeSunL
+     "No":
+       jump cafeSunN
+
+    label cafeSunL:
+    y "Yes, I like the sun."
+    e "Wow, you do?"
+    e "I see I see."
+    e "There are a number of people who like the sun."
+    e "Many people that admire it."
+    e "I understand."
+    e "I can never get myself to like the sun,"
+    e "Not even a little bit."
+    e "How does sun make you like it?"
+    e "Is it the colour?"
+    e "Is it the brightness?"
+    e "Is it how warm it feels on your cheeks?"
+    e "Or is it.."
+    e "Just because of it's popularity?"
+    e "Is it only because everyone likes sun?"
+    e "Everyday, when sun comes up,"
+    e "It brings more and more with itself."
+    e "More tricks,"
+    e "More gread."
+    e "Everyday, you can hear people talking about the sun."
+    e "They are happy when the sun is out, they want to be outside,"
+    e "They say it's such a nice weather, such a good weather."
+    e "And when the sun is not out,"
+    e "Everyone are mad."
+    e "Everyone curses at the weather."
+    e "All of them."
+    e "Not a single person thinking that's enough sun."
+    e "Not a single person caring about other weathers."
+    e "Not a single one of them thinking about what others want."
+    e "They always want the sun,"
+    e "They will always want the sun,"
+    e "Everyday and night,"
+    e "They curse at night for being dark,"
+    e "They curse at wind for being too cold,"
+    e "They hate the snow for being too cold,"
+    e "Too imperfect,"
+    e "Too difficult,"
+    e "And yet they want to see and experience the same thing everyday!"
+    e "Isn't that silly, [playerNName]?"
+    e "How they blame the person that wishes for a single day of snow when there is snow."
+    e "How they laugh and humiliate the person who doesn't like sun when the sun shines high and bright in the sky."
+    e "Isn't it silly... how much they care?"
+    e "How much they care if you have a differing opinion than theirs...?"
+    e "How they love making life harder for someone with a different opinion."
+    e "[playerNName]..."
+    e "Have you ever seen a creature other than humans hating on its own kind for being different?"
+    e "Have you ever seen other animals making life harder for eachother for such small reasons?"
+    e "We do anything to prove we are right."
+    e "We do anything to keep up our ego, to make sure others know we are right."
+    e "We see it fitting to make other's lives harder,"
+    e "For fun, for our benefit."
+    e "I cannot bring myself to look at the sun."
+    e "The selfishness it brings with itself,"
+    e "The pains it brings with itself,"
+    e "It's unbearable."
+    e "Disgusting..."
+    e "Greedy..."
+    y "...yuki...?"
+    e "..."
+    #Player starts seeing a red line forming on yuki's neck
+    e "[playerNName]..."
+    e "I really like snow..."
+    e "My dear, dear snow."
+    e "I haven't seen snow in years..."
+    e "But maybe, just maybe,"
+    e "I can see my snow tonight."
+    e "Where no human greed exists,"
+    e "Where I can be peaceful."
+    e "Where I can become one with my snow..."
+    e "[playerNName],"
+    e "Thank you for not being cruel to me for hating the sun."
+    #she dies, frames change and her now black squiggily line figure
+    #with a red bleeding line on her neck disappear,
+    #the line disappears the last and turns into ice? not confirmed
+    y "Yuki...?"
+    y "..."
+    s "Hey look!"
+    s "It's snowing!"
+    b "It's finally snowing."
+    b "GOOD ENDING: (name not decided for now :d)"
+    return
+    label cafeSunN:
     e "test"
     return
-   
-   #MAJOR PATH: like the normal talk but in cafe!
-   label talk32
-   #note: the only cafe path that does not end here is secret drink,
-   #even if player refuses to eat, they will still participate in this talk.
-
 
     label talk4:
     e "Test"
