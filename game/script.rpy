@@ -1754,6 +1754,10 @@ label start:
     y "This looks really good, thank you!"
     y "I didn't expect it to look like this!"
     e "wow, it's so colourful!"
+    e "And sparkly!"
+    e "Try it!"
+    y "..."
+    e "well, how does it taste?"
     
     return
 
