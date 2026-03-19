@@ -5,8 +5,24 @@
 
 define e = Character("Yuki")
 define b = Character("???")
-define s = Character("?People?")
+define s = Character("People")
 
+# what to do:
+#Finish ending snowNight:
+#   finish the script
+#   finish the art (window house snowing)
+#Finish ending snowdark:
+#   finish the script
+#   finish the art 
+#Finish the ending sun like path in the park:
+#   finish the bg art for it 
+#   finish the script and ending
+#Finish the cafe arts:
+#   fix yuki sprite sitting on chair
+#   add the squiggly lines to the yuki art
+#   finish food arts
+#Finish the cafe sun hate ending:
+#   finish expressions and stuff like all other cafe scenes
 
 # The game starts here.
 
@@ -337,8 +353,6 @@ label start:
         jump pCafe
      "Lake":
         jump pLake
-     "My house":
-        jump pHouse
      
 
     #PATH, cafe
@@ -416,30 +430,6 @@ label start:
     b "Just don't let her see you again."
     b "BAD ENDING(Lake)."
     return
-
-    
-    #PATH, house
-    label pHouse:
-    y "Do you want to come to my-"
-    e "House?"
-    y "I mean-"
-    hide sprite2
-    show yukiHappy at center:
-      zoom 0.8
-    e "Ofcourse I want to come to your house!"
-    e "I bet it's so cold,"
-    e "So cozy,"
-    e "With no sunlight, pure darkness,"
-    hide yukiHappy
-    show sprite2 at center:
-      zoom 0.8
-    y "Actually-"
-    hide sprite2
-    show yukiHappy at center:
-      zoom 0.8
-    e "That's wonderful! Let's get going now!"
-    y "... If you want to...?"
-    jump talk4
 
 
     #PATH, fan
@@ -1965,12 +1955,56 @@ label start:
     b "It's finally snowing."
     b "GOOD ENDING: (name not decided for now :d)"
     return
-    label cafeSunN:
-    e "test"
-    return
 
-    label talk4:
-    e "Test"
+    label cafeSunN:
+    y "No, I don't like the sun."
+    e "You don't?"
+    e "Me too!"
+    e "I really don't like the sun."
+    e "It feels way too hot on my skin."
+    e "It's like it wants to burn me off!"
+    e "I like snow a lot more than sun."
+    e "It's just really cold and cozy."
+    e "Plus you can play with it!"
+    e "I always get so happy when it snows!"
+    menu:
+     "I see.":
+       jump cafeSnow
+     "That's so cool!":
+       jump cafeSnow
+     "Uh huh.":
+       jump cafeSnow
+    Label cafeSnow:
+    e "Yes!"
+    e "Snow is just so pretty,"
+    e "And so white,"
+    e "And so so so cold!"
+    e "I love being in the snow!"
+    e "It's so beautiful!"
+    e "It's been a few years since I've seen snow."
+    e "It just never ever snows here!"
+    e "Isn't that crazy?"
+    e "I just want to see some snow again!"
+    menu:
+     "I understand.":
+       jump cafeSnow2
+     "Exactly!":
+       jump cafeSnow2
+     "I agree.":
+       jump cafeSnow2
+    label cafeSnow2:
+    e "I know right?"
+    e "Everyone knows there was no snow for many years!"
+    e "Maybe if it could snow..."
+    s "Look! It's snowing!"
+    y "Yuki!"
+    e "What?"
+    e "Is it really snowing?"
+    e "I will go see,"
+    e "Thank you for tonight! See you later!"
+    #she disappears
+    b "Great choices."
+    b "GOOD ENDING: Joyful Snow Night"
     return
 
     label snowNight:
