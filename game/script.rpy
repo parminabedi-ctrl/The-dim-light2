@@ -1757,7 +1757,11 @@ label start:
     e "And sparkly!"
     e "Try it!"
     y "..."
-    e "well, how does it taste?"
+    e "Well, how does it taste [playerNName]?"
+    y "It tastes really good!"
+    y "I never tasted anything similair to this!"
+    e "Really?"
+    
     
     return
 
