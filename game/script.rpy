@@ -1761,9 +1761,32 @@ label start:
     y "It tastes really good!"
     y "I never tasted anything similair to this!"
     e "Really?"
-    
-    
+    e "Wow, that's good!"
+    e "My crushed ice is good as well."
+    e "So cold,"
+    e "Very very cold."
+    e "It helps me cool down!"
+    e "And it feels cold."
+    y "I think you said that multiple times."
+    e "I did?"
+    e "Oh no!"
+    # from here player starts to black out, poison
+    e "I'm really sorry,"
+    e "It's just that i felt insanely hot outside,"
+    e "So now that I can be here and..."
+    e "[playerNName], are you okay?"
+    e "[playerNName]!"
+    y "..."
+    e "Oh... call..."
+    e "Don't..."
+    y "..."
+    b "[playerNName]?"
+    b "Well, it's over now."
+    b "Maybe next time don't try drinking unknown.."
+    b "su- drinks."
+    b "BAD ENDING: Poisoned"
     return
+  
 
     label cafeEatN:
     e "test"
