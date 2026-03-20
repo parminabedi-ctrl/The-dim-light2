@@ -7,20 +7,20 @@ define e = Character("Yuki")
 define b = Character("???")
 define s = Character("People")
 
-# what to do:
+#WHAT TO DO:
 
 #Finish ending snowdark:
 #   finish the script
 #   finish the art
 
 #Finish the cafe arts:
-#   fix yuki sprite sitting on chair
 #   add the squiggly lines to the yuki art
 #   finish food arts
 
 #Finish the expressions in all cafe scenes
 #Do the game ending scores:
 #     Number of endings: /9 
+
 
 # The game starts here.
 
@@ -1599,11 +1599,17 @@ label start:
     scene cafe2:
      "images/cafe2.png"
      zoom 0.48
-    show sprite2 at Position(xpos= 0.33, ypos= 0.18):
-     zoom 0.6
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yay!"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It's finally cold!"
     e "this is amazing!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "[playerNName], do you like it here?"
     menu:
       "Do you like it in the cafe?"
@@ -1614,17 +1620,38 @@ label start:
     label cafeY:
     y "Yes, I like it here."
     e "You do?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Well that's really great to hear!"
+    hide yukiHappy
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I like the atmosphere of here."
+    hide yukiBlink
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "it's very cozy!"
     jump talk31
     label cafeN:
     y "No, I don't like this cafe."
+    hide sprite2
+    show yukiStare at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Oh no, that's not good."
+    hide yukiStare
+   show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Well, maybe if we stay here for a while you will change your mind?"
+    hide yukiBlink 
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It's pretty cozy and comfortable in here."
     jump talk31
     label talk31:
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Anyways, Now that we're here,"
     e "Do you want to get something to eat or drink?"
     menu:
@@ -1635,8 +1662,14 @@ label start:
        jump cafeEatN
     label cafeEatY:
     y "Sure, why not?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yay, that's great because I want something too!"
     e "I was kinda hoping for you to say yes!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "What are you going to order?"
     menu:
      "What will you order?"
@@ -1653,149 +1686,343 @@ label start:
     label cafeTiramisu:
     e "I'm gonna get tiramisu."
     e "Woah, you like tiramisu?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "That's so fancy!"
     e "I like your choice."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm gonna order flavoured crushed ice."
     y "They sell those here?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yes they do!"
     e "I think it's gonna help me cool down."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e ""
     e "I really like it in here,"
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It was a really good idea to rest a bit in this cafe!"
+    hide yukiBlink
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "And their items are so cool as well!"
     e "They have sooooooo many cold items!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "I'm sure they do."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "Wow,"
     y "This looks really good, thank you!"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yay, you got your tiramisu!"
     e "I got my crushed ice as well!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "How does it taste?"
     y "It's good, I like it."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm glad. it would be awkward if yours tasted bad and mine tasted good."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Crushed ice is always good."
     jump talk32
 
     label cafeLatte:
     y "I'm gonna get a latte."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Oh, that's a good choice!"
     e "Very classic choice."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm gonna order flavoured crushed ice."
     y "They sell those here?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yes they do!"
     e "I think it's gonna help me cool down."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e ""
     e "I really like it in here,"
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It was a really good idea to rest a bit in this cafe!"
+    hide yukiBlink
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "And their items are so cool as well!"
     e "They have sooooooo many cold items!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "I'm sure they do."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "Wow,"
     y "This looks really good, thank you!"
+    hide sprite2
+    show yukihappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yay, you got your latte!"
     e "I got my crushed ice as well!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "How does it taste?"
     y "It's good, I like it."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm glad. it would be awkward if yours tasted bad and mine tasted good."
+    hide yukiHappy 
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Crushed ice is always good."
     jump talk32
+
     label cafeLemonade:
     y "I'm gonna get lemonade."
+    hide sprite2 
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Okay, lemonade is good"
+    hide yukiBlink 
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I like it's taste, it tastes fresh most of the times."
+    hide yukiHappy 
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm gonna order flavoured crushed ice."
     y "They sell those here?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yes they do!"
     e "I think it's gonna help me cool down."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e ""
     e "I really like it in here,"
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It was a really good idea to rest a bit in this cafe!"
     e "And their items are so cool as well!"
+    hide yukiBlink
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "They have sooooooo many cold items!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "I'm sure they do."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "Wow,"
     y "This looks really good, thank you!"
+    hide sprite2
+    show yukihappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yay, you got your lemonade!!"
     e "I got my crushed ice as well!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "How does it taste?"
     y "It's good, I like it."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm glad. it would be awkward if yours tasted bad and mine tasted good."
+    hide yukiHappy 
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Crushed ice is always good."
     jump talk32
 
     label cafeIcedcoffee:
     y "I'm gonna get iced coffee."
     e "Iced coffee?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I like cold drinks!"
     e "They're soooooo cold!"
     e "I'm gonna order flavoured crushed ice."
+    hide yukiHappy 
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "They sell those here?"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yes they do!"
     e "I think it's gonna help me cool down."
-    e ""
-    e "I really like it in here,"
-    e "It was a really good idea to rest a bit in this cafe!"
-    e "And their items are so cool as well!"
-    e "They have sooooooo many cold items!"
-    y "I'm sure they do."
-    e "Exactly!"
     # orders arrived, show pictures of orders
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "Wow,"
     y "This looks really good, thank you!"
-    e "Yay, you got your iced coffee!"
+    hide sprite2
+    show yukihappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
+    e "Yay, you got your lemonade!"
     e "I got my crushed ice as well!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "How does it taste?"
     y "It's good, I like it."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm glad. it would be awkward if yours tasted bad and mine tasted good."
+    hide yukiHappy 
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Crushed ice is always good."
     jump talk32
 
     label cafeSecret:
     y "I'm gonna try the secret menu item."
     e "You like to try new things?"
+    hide sprite2
+    show yukiBlink  at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I wonder what it can be."
     e "I'm gonna order flavoured crushed ice."
+    hide yukiBlink
+    show sprite2  at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "They sell those here?"
+    hide sprite2  
+    show yukiHappy  at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Yes they do!"
     e "I think it's gonna help me cool down."
+    hide yukiHappy 
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e ""
     e "I really like it in here,"
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It was a really good idea to rest a bit in this cafe!"
     e "And their items are so cool as well!"
+    hide yukiBlink
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "They have sooooooo many cold items!"
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "I'm sure they do."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "Wow,"
     y "This looks really good, thank you!"
     y "I didn't expect it to look like this!"
+    hide sprite2 
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "wow, it's so colourful!"
     e "And sparkly!"
     e "Try it!"
     y "..."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Well, how does it taste [playerNName]?"
     y "It tastes really good!"
     y "I never tasted anything similair to this!"
     e "Really?"
+    hide sprite2 
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Wow, that's good!"
     e "My crushed ice is good as well."
+    hide yukiHappy 
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "So cold,"
     e "Very very cold."
+    hide yukiBlink
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It helps me cool down!"
     e "And it feels cold."
+    hide yukiHappy
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     y "I think you said that multiple times."
     e "I did?"
+    hide sprite2
+    show yukiStare at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Oh no!"
     # from here player starts to black out, poison
+    hide yukiStare
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm really sorry,"
     e "It's just that i felt insanely hot outside,"
     e "So now that I can be here and..."
+    hide yukiBlink
+    show yukiStare at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "[playerNName], are you okay?"
+    hide yukiStare
+    #player completely blacks out here
     e "[playerNName]!"
     y "..."
     e "Oh... call..."
@@ -1803,19 +2030,26 @@ label start:
     y "..."
     b "[playerNName]?"
     b "Well, it's over now."
-    b "Maybe next time don't try drinking unknown.."
-    b "su- drinks."
-    b "BAD ENDING: Poisoned"
+    b "Maybe next time don't try drinking unknown stuff."
+    b "BAD ENDING: Poison"
     return
   
 
     label cafeEatN:
     y "No, I don't want to eat."
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "ohh, well that's okay!"
-    #might or might not make yuki eat
     e "I'm not very hungry either."
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I'm not sure if there is anything good in this cafe,"
     e "They might not be selling good things."
+    hide sprite2
+    show yukiStare at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I hope we can get away with not ordering anything."
     e "I don't want them to kick me out in the sun."
     jump talk32
