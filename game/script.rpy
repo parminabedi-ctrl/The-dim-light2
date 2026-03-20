@@ -8,9 +8,6 @@ define b = Character("???")
 define s = Character("People")
 
 # what to do:
-#Finish ending snowNight:
-#   finish the script
-#   finish the art (window house snowing)
 
 #Finish ending snowdark:
 #   finish the script
@@ -23,8 +20,7 @@ define s = Character("People")
 
 #Finish the expressions in all cafe scenes
 #Do the game ending scores:
-#     Number of endings: /9
-#     
+#     Number of endings: /9 
 
 # The game starts here.
 
@@ -596,7 +592,7 @@ label start:
       zoom 1
     show sprite2 at center:
       zoom 0.8
-    e "[playerNName?]"
+    e "[playerNName]?"
     e "I have a question..."
     e "Do you like the sun?" 
 
@@ -1938,7 +1934,7 @@ label start:
        jump cafeSnow
      "Uh huh.":
        jump cafeSnow
-    Label cafeSnow:
+    label cafeSnow:
     e "Yes!"
     e "Snow is just so pretty,"
     e "And so white,"
@@ -1972,7 +1968,35 @@ label start:
     return
 
     label snowNight:
-    e "Test snow night"
+    scene room:
+     "images/room.png"
+     zoom 0.48
+    y "Finally home,"
+    y "It was a weird day today."
+    y "She was an interesting person."
+    y "I wonder what made her like snow in the first place."
+    scene room1:
+     "images/roomS1.png"
+     zoom 0.48
+    y ""
+    y "What is that?"
+    scene room2:
+     "images/roomS2.png"
+     zoom 0.48
+    y "Is it..."
+    scene room3:
+     "images/roomS3.png"
+     zoom 0.48
+    s "It's snowing!"
+    scene room4:
+     "images/roomS4.png"
+     zoom 0.48
+    y "It's snowing?"
+    scene room5:
+     "images/roomS5.png"
+     zoom 0.48
+    b "It's finally snowing."
+    b "GOOD ENDING: Snow Under the Moonlight"
     return
 
     label snowDark:
