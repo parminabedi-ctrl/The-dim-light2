@@ -8,17 +8,17 @@ define b = Character("???")
 define s = Character("People")
 define w = Character("Waiter")
 
-$ persistent.ending1 = False
-$ persistent.ending2 = False
-$ persistent.ending3 = False
-$ persistent.ending4 = False
-$ persistent.ending5 = False
-$ persistent.ending6 = False
-$ persistent.ending7 = False
+default persistent.ending1 = False
+default persistent.ending2 = False
+default persistent.ending3 = False
+default persistent.ending4 = False
+default persistent.ending5 = False
+default persistent.ending6 = False
+default persistent.ending7 = False
+default persistent.ending8 = False
+default persistent.endings_finished = 0
 #WHAT TO DO:
-
-#Do the game ending scores:
-#     Number of endings: /7
+# test whole game, test all endings see if every route works read everything, and we're done!
 
 
 # The game starts here.
@@ -147,8 +147,20 @@ label start:
         zoom 0.8
     e "Well, have a nice day [playerNName]?"
     hide yukiStare
-    b "BAD ENDING(No interest)"
-    return
+    if persistent.ending1 == True:
+     b "You already achieved this ending!"
+     b "BAD ENDING: No Chance (Completed)"
+     b "Endings unlocked: [persistent.endings_finished]/8"
+     return
+    else:
+     b "You didn't even give her a chance?"
+     b "ENDING UNLOCKED:"
+     b "BAD ENDING: No Chance"
+     $ persistent.ending1 = True
+     $ persistent.endings_finished += 1
+     b "Endings unlocked: [persistent.endings_finished]/8"
+     return
+    
     
 
     # PATH of you choosing to help yuki
@@ -435,10 +447,20 @@ label start:
       zoom 0.8
     e "Have a good day."
     hide yukiBlink
-    b "Well I don't think telling someone like her to jump in a lake was smart."
-    b "Just don't let her see you again."
-    b "BAD ENDING(Lake)."
-    return
+    if persistent.ending2 == True:
+     b "You already achieved this ending!"
+     b "BAD ENDING: Lake (Completed)"
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
+    else:
+     b "Well I don't think telling someone like her to jump in a lake was smart."
+     b "Just don't let her see you again."
+     b "ENDING UNLOCKED:"
+     b "BAD ENDING: Lake"
+     $ persistent.ending2 = True
+     $ persistent.endings_finished += 1
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
 
 
     #PATH, fan
@@ -584,12 +606,22 @@ label start:
       zoom 0.8
     e "Have a nice day, [playerFName] [playerLName]."
     hide yukiBlink
-    b "You really made her angry"
-    b "Just watch out for her from now on."
-    b "Don't let her see you for a while at least."
-    b "Hopefully you'll be okay."
-    b "BAD ENDING(Storm Off)."
-    return
+    if persistent.ending3 == True:
+     b "You already achieved this ending!"
+     b "BAD ENDING: Storm Off (Completed)"
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
+    else:
+     b "You really made her angry"
+     b "Just watch out for her from now on."
+     b "Don't let her see you for a while at least."
+     b "Hopefully you'll be okay."
+     b "ENDING UNLOCKED:"
+     b "BAD ENDING: Storm Off"
+     $ persistent.ending3 = True
+     $ persistent.endings_finished += 1
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
 
 
     #MAJOR PATH, sun or not sun?
@@ -1599,9 +1631,19 @@ label start:
     e "I'll see you later then!"
     e "Have a good night!"
     hide yukiHappy
-    b "Good choices, she doesn't hate you."
-    b "GOOD ENDING: When the Sun Sets"
-    return
+    if persistent.ending4 == True:
+     b "You already achieved this ending!"
+     b "GOOD ENDING: When the Sun Sets (Completed)"
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
+    else:
+     b "Good choices, she doesn't hate you."
+     b "ENDING UNLOCKED:"
+     b "GOOD ENDING: When the Sun Sets"
+     $ persistent.ending4 = True
+     $ persistent.endings_finished += 1
+     b "Endings unlocked: [persistent.endings_finished]/8"
+     return
 
 
     label talk3:
@@ -2086,11 +2128,22 @@ label start:
     e "Oh... call..."
     e "Don't..."
     y "..."
-    b "[playerNName]?"
-    b "Well, it's over now."
-    b "Maybe next time don't try drinking unknown stuff."
-    b "BAD ENDING: Poison"
-    return
+    if persistent.ending5 == True:
+     b "[playerNName]!"
+     b "You already achieved this ending!"
+     b "BAD ENDING: Poison (Completed)"
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
+    else:
+     b "[playerNName]?"
+     b "Well, it's over now."
+     b "Maybe next time don't try drinking unknown stuff."
+     b "ENDING UNLOCKED:"
+     b "BAD ENDING: Poison"
+     $ persistent.ending5 = True
+     $ persistent.endings_finished += 1
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
   
 
     label cafeEatN:
@@ -2309,8 +2362,18 @@ label start:
     s "Hey look!"
     s "It's snowing!"
     b "It's finally snowing."
-    b "GOOD ENDING: Eternal frost"
-    return
+    if persistent.ending6 == True:
+     b "You already achieved this ending!"
+     b "GOOD ENDING: Eternal Frost(Completed)"
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
+    else:
+     b "ENDING UNLOCKED:"
+     b "GOOD ENDING: Eternal Frost"
+     $ persistent.ending6 = True
+     $ persistent.endings_finished += 1
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
 
     label cafeSunN:
     y "No, I don't like the sun."
@@ -2351,7 +2414,8 @@ label start:
        jump cafeSnow
     label cafeSnow:
     e "Yes!"
-    hide yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+    hide yukiBlink 
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
     e "Snow is just so pretty,"
     e "And so white,"
@@ -2401,9 +2465,20 @@ label start:
      zoom 0.4
     e "Thank you for tonight! See you later!"
     #she disappears
-    b "Great choices."
-    b "GOOD ENDING: Joyful Snow Night"
-    return
+    hide yukiHappy
+    if persistent.ending7 == True:
+     b "You already achieved this ending!"
+     b "GOOD ENDING: Joyful Snow Night (Complete)"
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
+    else:
+     b "Great choices."
+     b "ENDING UNLOCKED:"
+     b "GOOD ENDING: Joyful Snow Night"
+     $ persistent.ending7 = True
+     $ persistent.endings_finished += 1
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
 
     label snowNight:
     scene room:
@@ -2434,5 +2509,15 @@ label start:
      "images/roomS5.png"
      zoom 0.48
     b "It's finally snowing."
-    b "GOOD ENDING: Snow Under the Moonlight"
-    return
+    if persistent.ending8 == True:
+     b "You already achieved this ending!"
+     b "GOOD ENDING: Snow Under the Moonlight (Completed)"
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
+    else:
+     b "ENDING UNLOCKED:"
+     b "GOOD ENDING: Snow Under the Moonlight"
+     $ persistent.ending7 = True
+     $ persistent.endings_finished += 1
+     b "Unlocked endings: [persistent.endings_finished]/8"
+     return
