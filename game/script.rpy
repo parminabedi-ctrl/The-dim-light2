@@ -14,10 +14,6 @@ define w = Character("Waiter")
 #   finish the script
 #   finish the art
 
-#Finish the cafe arts:
-#   add the squiggly lines to the yuki art
-
-#Finish the expressions in all cafe scenes
 #Do the game ending scores:
 #     Number of endings: /9 
 
@@ -2129,42 +2125,84 @@ label start:
     label cafeSunL:
     y "Yes, I like the sun."
     e "Wow, you do?"
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I see I see."
     e "There are a number of people who like the sun."
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Many people that admire it."
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I understand."
     e "I can never get myself to like the sun,"
     e "Not even a little bit."
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "How does sun make you like it?"
     e "Is it the colour?"
     e "Is it the brightness?"
     e "Is it how warm it feels on your cheeks?"
     e "Or is it.."
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Just because of it's popularity?"
     e "Is it only because everyone likes sun?"
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Everyday, when sun comes up,"
     e "It brings more and more with itself."
     e "More tricks,"
     e "More gread."
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Everyday, you can hear people talking about the sun."
     e "They are happy when the sun is out, they want to be outside,"
     e "They say it's such a nice weather, such a good weather."
     e "And when the sun is not out,"
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Everyone are mad."
     e "Everyone curses at the weather."
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "All of them."
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Not a single person thinking that's enough sun."
     e "Not a single person caring about other weathers."
     e "Not a single one of them thinking about what others want."
     e "They always want the sun,"
+    hide sprite2
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "They will always want the sun,"
     e "Everyday and night,"
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "They curse at night for being dark,"
     e "They curse at wind for being too cold,"
     e "They hate the snow for being too cold,"
     e "Too imperfect,"
     e "Too difficult,"
+    hide sprite2 
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "And yet they want to see and experience the same thing everyday!"
+    hide yukiBlink
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Isn't that silly, [playerNName]?"
     e "How they blame the person that wishes for a single day of snow when there is snow."
     e "How they laugh and humiliate the person who doesn't like sun when the sun shines high and bright in the sky."
@@ -2172,35 +2210,97 @@ label start:
     e "How much they care if you have a differing opinion than theirs...?"
     e "How they love making life harder for someone with a different opinion."
     e "[playerNName]..."
+    image line1:
+     "images/line1.png"
+    show line1 at Position(xpos= 0.43, ypos= 0.32):
+     zoom 0.8
     e "Have you ever seen a creature other than humans hating on its own kind for being different?"
     e "Have you ever seen other animals making life harder for eachother for such small reasons?"
+    image line2:
+     "images/line2.png"
+    show line2 at Position(xpos= 0.43, ypos= 0.32):
+     zoom 0.8
     e "We do anything to prove we are right."
     e "We do anything to keep up our ego, to make sure others know we are right."
+    image line3:
+     "images/line3.png"
+    show line3 at Position(xpos= 0.43, ypos= 0.32):
+     zoom 0.8
     e "We see it fitting to make other's lives harder,"
     e "For fun, for our benefit."
+    image line4:
+     "images/line4.png"
+    show line4 at Position(xpos= 0.43, ypos= 0.32):
+     zoom 0.8
     e "I cannot bring myself to look at the sun."
+    image line5:
+     "images/line5.png"
+    show line5 at Position(xpos= 0.43, ypos= 0.32):
+     zoom 0.8
     e "The selfishness it brings with itself,"
+    image line6:
+     "images/line6.png"
+    show line6 at Position(xpos= 0.42, ypos= 0.3):
+     zoom 0.9
     e "The pains it brings with itself,"
+    image line7:
+     "images/line7.png"
+    show line7 at Position(xpos= 0.42, ypos= 0.3):
+     zoom 0.95
     e "It's unbearable."
+    image line8:
+     "images/line8.png"
+    show line8 at Position(xpos= 0.42, ypos= 0.28):
+     zoom 0.98
     e "Disgusting..."
+    image line9:
+     "images/line9.png"
+    show line9 at Position(xpos= 0.41, ypos= 0.28):
+     zoom 1.05
     e "Greedy..."
+    image line10:
+     "images/line10.png"
+    show line10 at Position(xpos= 0.405, ypos= 0.27):
+     zoom 1.1
     y "...yuki...?"
     e "..."
     #Player starts seeing a red line forming on yuki's neck
     e "[playerNName]..."
+    hide line10
     e "I really like snow..."
+    hide line9
     e "My dear, dear snow."
+    show line9 at Position(xpos= 0.41, ypos= 0.28):
+     zoom 1.05
     e "I haven't seen snow in years..."
+    show line10 at Position(xpos= 0.405, ypos= 0.27):
+     zoom 1.1
     e "But maybe, just maybe,"
+    hide line10
     e "I can see my snow tonight."
+    hide line9
     e "Where no human greed exists,"
+    show line9 at Position(xpos= 0.41, ypos= 0.28):
+     zoom 1.05
     e "Where I can be peaceful."
+    show line10 at Position(xpos= 0.405, ypos= 0.27):
+     zoom 1.1
     e "Where I can become one with my snow..."
     e "[playerNName],"
     e "Thank you for not being cruel to me for hating the sun."
-    #she dies, frames change and her now black squiggily line figure
-    #with a red bleeding line on her neck disappear,
-    #the line disappears the last and turns into ice? not confirmed
+    hide yukiHappy
+    hide yukiStare
+    hide line1
+    hide line2
+    hide line3
+    hide line4
+    hide line5
+    hide line6
+    hide line7
+    hide line8
+    hide line9
+    hide line10
+    hide line11
     y "Yuki...?"
     y "..."
     s "Hey look!"
