@@ -8,14 +8,17 @@ define b = Character("???")
 define s = Character("People")
 define w = Character("Waiter")
 
+$ persistent.ending1 = False
+$ persistent.ending2 = False
+$ persistent.ending3 = False
+$ persistent.ending4 = False
+$ persistent.ending5 = False
+$ persistent.ending6 = False
+$ persistent.ending7 = False
 #WHAT TO DO:
 
-#Finish ending snowdark:
-#   finish the script
-#   finish the art
-
 #Do the game ending scores:
-#     Number of endings: /9 
+#     Number of endings: /7
 
 
 # The game starts here.
@@ -1083,7 +1086,7 @@ label start:
     e "All of us!"
     y "..."
     e "I hope you have a wonderful day."
-    jump snowDark
+    jump snowNight
 
     # path, foggy like
     label foggy:
@@ -2306,19 +2309,38 @@ label start:
     s "Hey look!"
     s "It's snowing!"
     b "It's finally snowing."
-    b "GOOD ENDING: (name not decided for now :d)"
+    b "GOOD ENDING: Eternal frost"
     return
 
     label cafeSunN:
     y "No, I don't like the sun."
     e "You don't?"
+    hide sprite2
+    hide yukiStare
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Me too!"
     e "I really don't like the sun."
+    hide yukiHappy
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It feels way too hot on my skin."
+    hide yukiBlink
+    show yukiStare at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It's like it wants to burn me off!"
+    hide yukiStare
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I like snow a lot more than sun."
     e "It's just really cold and cozy."
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Plus you can play with it!"
+    hide yukiHappy
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I always get so happy when it snows!"
     menu:
      "I see.":
@@ -2329,13 +2351,21 @@ label start:
        jump cafeSnow
     label cafeSnow:
     e "Yes!"
+    hide yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Snow is just so pretty,"
     e "And so white,"
     e "And so so so cold!"
     e "I love being in the snow!"
     e "It's so beautiful!"
+    hide yukiHappy
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "It's been a few years since I've seen snow."
     e "It just never ever snows here!"
+    hide yukiBlink
+    show yukiStare at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Isn't that crazy?"
     e "I just want to see some snow again!"
     menu:
@@ -2347,13 +2377,28 @@ label start:
        jump cafeSnow2
     label cafeSnow2:
     e "I know right?"
+    hide yukiStare
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Everyone knows there was no snow for many years!"
     e "Maybe if it could snow..."
+    hide yukiBlink
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     s "Look! It's snowing!"
     y "Yuki!"
+    hide sprite2
+    show yukiStare at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "What?"
     e "Is it really snowing?"
+    hide yukiStare
+    show sprite2 at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "I will go see,"
+    hide sprite2
+    show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
+     zoom 0.4
     e "Thank you for tonight! See you later!"
     #she disappears
     b "Great choices."
@@ -2390,8 +2435,4 @@ label start:
      zoom 0.48
     b "It's finally snowing."
     b "GOOD ENDING: Snow Under the Moonlight"
-    return
-
-    label snowDark:
-    e "Test snow dark"
     return
