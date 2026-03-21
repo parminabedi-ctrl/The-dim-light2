@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1981: Line is indented, but the preceding ATL statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    zoom 0.48
-    ^
+File "game/script.rpy", line 1656: Indentation mismatch.
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Thu Mar 19 23:34:00 2026
+Fri Mar 20 19:35:19 2026

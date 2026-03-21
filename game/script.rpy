@@ -6,6 +6,7 @@
 define e = Character("Yuki")
 define b = Character("???")
 define s = Character("People")
+define w = Character("Waiter")
 
 #WHAT TO DO:
 
@@ -15,7 +16,6 @@ define s = Character("People")
 
 #Finish the cafe arts:
 #   add the squiggly lines to the yuki art
-#   finish food arts
 
 #Finish the expressions in all cafe scenes
 #Do the game ending scores:
@@ -58,6 +58,18 @@ label start:
     image iTruck :
         "images/iTruck.png"
         zoom 0.6
+
+
+    image tiramisu:
+      "images/tiramisu.png"
+    image icedCoffee:
+      "images/iced-coffee.png"
+    image latte:
+      "images/latte.png"
+    image lemonade:
+      "images/lemonade.png"
+    image secretDrink:
+      "images/secret-drink.png"
 
     $playerFName= "" # PLAYER NAME
     $playerLName= "" # PLAYER LAST NAME
@@ -1640,7 +1652,7 @@ label start:
      zoom 0.4
     e "Oh no, that's not good."
     hide yukiStare
-   show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
+    show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
     e "Well, maybe if we stay here for a while you will change your mind?"
     hide yukiBlink 
@@ -1724,6 +1736,9 @@ label start:
      zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    w "Here's your order, enjoy!"
+    show tiramisu at Position(xpos= 0.45, ypos= 0.6):
+     zoom 0.3
     hide yukiHappy
     show sprite2 at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
@@ -1789,6 +1804,9 @@ label start:
      zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    w "Here's your order, enjoy!"
+    show latte at Position(xpos= 0.45, ypos=0.6):
+     zoom 0.3
     hide yukiHappy
     show sprite2 at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
@@ -1857,6 +1875,9 @@ label start:
      zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    w "Here's your order, enjoy!"
+    show lemonade at Position(xpos= 0.45, ypos= 0.6):
+     zoom 0.3
     hide yukiHappy
     show sprite2 at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
@@ -1901,6 +1922,9 @@ label start:
     e "Yes they do!"
     e "I think it's gonna help me cool down."
     # orders arrived, show pictures of orders
+    w "Here's your order, enjoy!"
+    show icedCoffee at Position(xpos= 0.5, ypos= 0.5):
+     zoom 0.3
     hide yukiHappy
     show sprite2 at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
@@ -1909,7 +1933,7 @@ label start:
     hide sprite2
     show yukihappy at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
-    e "Yay, you got your lemonade!"
+    e "Yay, you got your iced coffee!"
     e "I got my crushed ice as well!"
     hide yukiHappy
     show sprite2 at Position(xpos= 0.385, ypos= 0.20):
@@ -1966,6 +1990,9 @@ label start:
      zoom 0.4
     e "Exactly!"
     # orders arrived, show pictures of orders
+    w "Here's your order, enjoy!"
+    show secretDrink at Position(xpos= 0.55, ypos= 0.5):
+     zoom 0.3
     hide yukiHappy
     show sprite2 at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
@@ -1990,10 +2017,18 @@ label start:
     show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
     e "Wow, that's good!"
+    image black1:
+     "images/black1.png"
+    show black1:
+     zoom 1.92
     e "My crushed ice is good as well."
     hide yukiHappy 
     show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
+    image black2:
+     "images/black2.png"
+    show black2:
+     zoom 1.92
     e "So cold,"
     e "Very very cold."
     hide yukiBlink
@@ -2006,23 +2041,47 @@ label start:
      zoom 0.4
     y "I think you said that multiple times."
     e "I did?"
+    image black3:
+     "images/black3.png"
+    show black3:
+     zoom 1.92
     hide sprite2
     show yukiStare at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
     e "Oh no!"
     # from here player starts to black out, poison
+    image black4:
+     "images/black4.png"
+    show black4:
+     zoom 1.92
     hide yukiStare
     show yukiBlink at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
     e "I'm really sorry,"
+    image black5:
+     "images/black5.png"
+    show black5:
+     zoom 1.92
     e "It's just that i felt insanely hot outside,"
+    image black6:
+     "images/black6.png"
+    show black6:
+     zoom 1.92
     e "So now that I can be here and..."
     hide yukiBlink
     show yukiStare at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
+    image black7:
+     "images/black7.png"
+    show black7:
+     zoom 1.92
     e "[playerNName], are you okay?"
     hide yukiStare
     #player completely blacks out here
+    image black8:
+     "images/black8.png"
+    show black8:
+     zoom 2
     e "[playerNName]!"
     y "..."
     e "Oh... call..."
