@@ -20,11 +20,19 @@ default persistent.endings_finished = 0
 #WHAT TO DO:
 # test whole game, test all endings see if every route works read everything, and we're done!
 
+init python:
+    import random
+    audio = [
+        "song1.mp3",
+        "song2.mp3",
+        "song3.mp3"
+    ]
 
 # The game starts here.
 
 label start:
-
+    $ selected_audio = random.choice(audio)
+    play music selected_audio fadein 1.0 loop
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
@@ -153,11 +161,11 @@ label start:
      b "Endings unlocked: [persistent.endings_finished]/8"
      return
     else:
+     $ persistent.ending1 = True
+     $ persistent.endings_finished += 1
      b "You didn't even give her a chance?"
      b "ENDING UNLOCKED:"
      b "BAD ENDING: No Chance"
-     $ persistent.ending1 = True
-     $ persistent.endings_finished += 1
      b "Endings unlocked: [persistent.endings_finished]/8"
      return
     
@@ -453,12 +461,12 @@ label start:
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
     else:
+     $ persistent.ending2 = True
+     $ persistent.endings_finished += 1
      b "Well I don't think telling someone like her to jump in a lake was smart."
      b "Just don't let her see you again."
      b "ENDING UNLOCKED:"
      b "BAD ENDING: Lake"
-     $ persistent.ending2 = True
-     $ persistent.endings_finished += 1
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
 
@@ -612,14 +620,14 @@ label start:
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
     else:
+     $ persistent.ending3 = True
+     $ persistent.endings_finished += 1
      b "You really made her angry"
      b "Just watch out for her from now on."
      b "Don't let her see you for a while at least."
      b "Hopefully you'll be okay."
      b "ENDING UNLOCKED:"
      b "BAD ENDING: Storm Off"
-     $ persistent.ending3 = True
-     $ persistent.endings_finished += 1
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
 
@@ -1637,11 +1645,11 @@ label start:
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
     else:
+     $ persistent.ending4 = True
+     $ persistent.endings_finished += 1
      b "Good choices, she doesn't hate you."
      b "ENDING UNLOCKED:"
      b "GOOD ENDING: When the Sun Sets"
-     $ persistent.ending4 = True
-     $ persistent.endings_finished += 1
      b "Endings unlocked: [persistent.endings_finished]/8"
      return
 
@@ -2135,13 +2143,13 @@ label start:
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
     else:
+     $ persistent.ending5 = True
+     $ persistent.endings_finished += 1
      b "[playerNName]?"
      b "Well, it's over now."
      b "Maybe next time don't try drinking unknown stuff."
      b "ENDING UNLOCKED:"
      b "BAD ENDING: Poison"
-     $ persistent.ending5 = True
-     $ persistent.endings_finished += 1
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
   
@@ -2260,6 +2268,7 @@ label start:
     show yukiHappy at Position(xpos= 0.385, ypos= 0.20):
      zoom 0.4
     e "Isn't that silly, [playerNName]?"
+    hide yukiStare
     e "How they blame the person that wishes for a single day of snow when there is snow."
     e "How they laugh and humiliate the person who doesn't like sun when the sun shines high and bright in the sky."
     e "Isn't it silly... how much they care?"
@@ -2343,9 +2352,9 @@ label start:
      zoom 1.1
     e "Where I can become one with my snow..."
     e "[playerNName],"
+    
     e "Thank you for not being cruel to me for hating the sun."
     hide yukiHappy
-    hide yukiStare
     hide line1
     hide line2
     hide line3
@@ -2357,6 +2366,7 @@ label start:
     hide line9
     hide line10
     hide line11
+    
     y "Yuki...?"
     y "..."
     s "Hey look!"
@@ -2368,10 +2378,10 @@ label start:
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
     else:
-     b "ENDING UNLOCKED:"
-     b "GOOD ENDING: Eternal Frost"
      $ persistent.ending6 = True
      $ persistent.endings_finished += 1
+     b "ENDING UNLOCKED:"
+     b "GOOD ENDING: Eternal Frost"
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
 
@@ -2472,11 +2482,11 @@ label start:
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
     else:
+     $ persistent.ending7 = True
+     $ persistent.endings_finished += 1
      b "Great choices."
      b "ENDING UNLOCKED:"
      b "GOOD ENDING: Joyful Snow Night"
-     $ persistent.ending7 = True
-     $ persistent.endings_finished += 1
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
 
@@ -2515,9 +2525,9 @@ label start:
      b "Unlocked endings: [persistent.endings_finished]/8"
      return
     else:
+     $ persistent.ending8 = True
+     $ persistent.endings_finished += 1
      b "ENDING UNLOCKED:"
      b "GOOD ENDING: Snow Under the Moonlight"
-     $ persistent.ending7 = True
-     $ persistent.endings_finished += 1
      b "Unlocked endings: [persistent.endings_finished]/8"
      return

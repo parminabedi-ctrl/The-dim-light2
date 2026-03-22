@@ -2,13 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 15: expected statement.
-    dafault persistent.ending5 = False
-                      ^
-
-File "game/script.rpy", line 16: expected statement.
-    dafault persistent.ending6 = False
-                      ^
+File "game/script.rpy", line 2370: Indentation mismatch.
+    show yukiHappy
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sat Mar 21 03:28:26 2026
+Sat Mar 21 20:32:38 2026
